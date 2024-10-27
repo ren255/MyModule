@@ -1,4 +1,4 @@
-import time,os
+import os
 
 from langchain_community.chat_models import ChatOpenAI
 from typing import Optional
@@ -16,7 +16,7 @@ class ChatOpenRouter(ChatOpenAI):
         openai_api_base: str = "https://openrouter.ai/api/v1",
         **kwargs
     ):
-        openai_api_key = openai_api_key or os.getenv("OPENROUTER_API_KEY")
+        openai_api_key = openai_api_key or os.getenv("OPENAI_API_KEY")
         super().__init__(
             openai_api_base=openai_api_base,
             openai_api_key=openai_api_key,
